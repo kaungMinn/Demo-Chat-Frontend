@@ -118,7 +118,7 @@ src/
 
 ```bash
 # Start development server
-pnpm dev
+pnpm run dev
 
 # Build for production
 pnpm build
@@ -134,14 +134,73 @@ pnpm lint
 
 # Format code
 pnpm format
+
+# Start Storybook
+pnpm storybook
+
+# Build Storybook
+pnpm build-storybook
 ```
 
 ### Code Quality Tools
 
-- **ESLint**: Configured for React and TypeScript
-- **Prettier**: Consistent code formatting
-- **Husky**: Git hooks for pre-commit checks
-- **TypeScript**: Full type safety
+- **ESLint**: Configured with Airbnb style guide for React and TypeScript
+- **Prettier**: Consistent code formatting with automatic fixes
+- **Husky**: Git hooks for pre-commit checks with lint-staged
+- **lint-staged**: Runs linting and formatting only on staged files
+- **TypeScript**: Full type safety across the project
+- **Pre-commit hooks**: Automatic code quality checks before commits
+
+## 📚 Storybook
+
+The project includes Storybook for component development and documentation:
+
+### Features
+
+- **Interactive Component Playground**: Test components in isolation
+- **Documentation**: Auto-generated docs for all components
+- **Design System**: Visual showcase of UI components
+- **Accessibility Testing**: Built-in a11y addon for accessibility checks
+- **Responsive Testing**: Test components across different screen sizes
+
+### Usage
+
+```bash
+# Start Storybook development server
+pnpm storybook
+
+# Build static Storybook for deployment
+pnpm build-storybook
+```
+
+Visit `http://localhost:6006` when running the development server.
+
+## 🔄 CI/CD Pipeline
+
+The project uses GitHub Actions for automated testing and deployment:
+
+### Workflow Features
+
+- **Automated Testing**: Runs on every push request
+- **Code Quality Checks**: ESLint with Airbnb style guide enforcement
+- **Build Validation**: Ensures the project builds successfully
+- **Node.js Matrix**: Tests across multiple Node.js versions
+- **Fast CI**: Optimized for quick feedback with caching
+
+### CI Steps
+
+1. **Code Checkout**: Pulls the latest code
+2. **Setup Environment**: Installs Node.js and pnpm
+3. **Install Dependencies**: Caches dependencies for speed
+4. **Lint Code**: Runs ESLint with Airbnb rules
+5. **Build Project**: Validates the build process
+6. **Test Suite**: Runs unit and integration tests
+
+### Branch Protection
+
+- **Main Branch**: Requires CI checks before merging
+- **Pull Requests**: Automated reviews and status checks
+- **Quality Gates**: Blocks merges if checks fail
 
 ## 🎨 Design System
 
