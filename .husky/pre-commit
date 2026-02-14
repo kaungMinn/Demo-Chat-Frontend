@@ -1,0 +1,4 @@
+echo "Bro ! 😎 I am going to check your codes style. This is dope !! 😎 "
+# Run lint-staged on the staged files
+pnpm exec lint-staged
+
