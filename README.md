@@ -34,6 +34,43 @@ A modern, sleek admin dashboard for managing conversations and user interactions
 - **Build Tool**: Vite with HMR
 - **Code Quality**: ESLint + Prettier + Husky
 
+## Test Accounts
+
+For testing purposes, you can use these pre-configured accounts:
+
+### Admin Account
+
+- **Email:** `admin@gmail.com`
+- **Password:** `Monkey$99`
+- **Role:** Admin (2003)
+
+### User Accounts
+
+- **User 1:**
+  - **Email:** `alice@gmail.com`
+  - **Password:** `Monkey$99`
+  - **Role:** User (2001)
+
+- **User 2:**
+  - **Email:** `tester@gmail.com`
+  - **Password:** `Monkey$99`
+  - **Role:** User (2001)
+
+### Registration Example
+
+To create a new user account, send a POST request to `/bleep/v1/auth/register`:
+
+```json
+{
+  "name": "tester",
+  "password": "Monkey$99",
+  "email": "tester@gmail.com",
+  "roles": {
+    "admin": 2001
+  }
+}
+```
+
 ## 🚀 Quick Start
 
 ### Prerequisites
